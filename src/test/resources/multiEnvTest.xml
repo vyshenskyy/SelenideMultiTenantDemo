@@ -1,0 +1,40 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Multiple environments with Selenide" verbose="5" parallel="tests"  thread-count="2" > <!-- parallel="classes"  "tests" thread-count="3"   -->
+
+	<test name="Tests of theinternet site">
+		<parameter name="testPropertyFile"  value="ti"/>
+		<classes>
+			<class name="sampleTiTests.DoNothingTest" />
+			<class name="sampleTiTests.SaveScreenshotTest" />
+			<class name="sampleTiTests.DoNothingAfterLoginTest" />  
+			<class name="sampleTiTests.SecurePageTest" /> 	
+			<class name="sampleTiTests.WrongLoginTest" />
+		</classes>
+	</test>
+	
+	<test name="First tenant">
+	<parameter name="testPropertyFile"  value="mt_first"/>
+		<classes>
+			<class name="sampleMtTests.DoNothingTest" />
+			<class name="sampleMtTests.LoginLogoutTest" />
+			<class name="sampleMtTests.WrongLoginTest" />
+			<class name="sampleMtTests.DoNothingWithLoginTest" />
+			<class name="sampleMtTests.CommonPartTest" />
+			<class name="sampleMtTests.FirstTenantTest" />
+			
+		</classes>
+	</test>
+	<test name="Second tenant">
+	<parameter name="testPropertyFile"  value="mt_second"/>
+		<classes>
+			<class name="sampleMtTests.DoNothingTest" />
+			<class name="sampleMtTests.LoginLogoutTest" />
+			<class name="sampleMtTests.WrongLoginTest" />
+			<class name="sampleMtTests.DoNothingWithLoginTest" />
+			<class name="sampleMtTests.CommonPartTest" />
+			<class name="sampleMtTests.SecondTenantTest" />
+		</classes>
+	</test>
+	
+</suite>
+

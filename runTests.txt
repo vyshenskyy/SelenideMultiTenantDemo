@@ -1,0 +1,1 @@
+mvn clean test -Dtests=multiEnvTest -Denvironment.file.name=mt_first -l log.txt

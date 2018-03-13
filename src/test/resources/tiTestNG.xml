@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Simple Selenide tests" verbose="5"> 
+	<parameter name="testPropertyFile"  value="ti"/>
+	<test name="Tests of theinternet site">
+		<classes>
+			<class name="sampleTiTests.DoNothingTest" />
+			<class name="sampleTiTests.SaveScreenshotTest" /> 
+			<class name="sampleTiTests.DoNothingAfterLoginTest" /> 
+			<class name="sampleTiTests.SecurePageTest" /> 	
+			<class name="sampleTiTests.WrongLoginTest" />
+		</classes>
+	</test>
+</suite>
+

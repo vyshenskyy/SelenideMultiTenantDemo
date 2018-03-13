@@ -1,0 +1,37 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Simple Selenide tests" verbose="8"  parallel="classes" thread-count="3">
+	<test name="First tenant">
+	<parameter name="testPropertyFile"  value="mt_first"/>
+		<classes>
+			<class name="sampleMtTests.DoNothingTest" />
+			<class name="sampleMtTests.LoginLogoutTest" />
+			<class name="sampleMtTests.WrongLoginTest" />
+			<class name="sampleMtTests.DoNothingWithLoginTest" />
+			<class name="sampleMtTests.CommonPartTest" />
+			<class name="sampleMtTests.FirstTenantTest" />
+			
+		</classes>
+	</test>
+	<test name="Second tenant">
+	<parameter name="testPropertyFile"  value="mt_second"/>
+		<classes>
+			<class name="sampleMtTests.DoNothingTest" />
+			<class name="sampleMtTests.LoginLogoutTest" />
+			<class name="sampleMtTests.WrongLoginTest" />
+			<class name="sampleMtTests.DoNothingWithLoginTest" />
+			<class name="sampleMtTests.CommonPartTest" />
+			<class name="sampleMtTests.SecondTenantTest" />
+		</classes>
+	</test>
+	<test name="First tenant with wrong test">
+	<parameter name="testPropertyFile"  value="mt_first"/>
+		<classes>
+			<class name="sampleMtTests.DoNothingTest" />
+			<class name="sampleMtTests.LoginLogoutTest" />
+			<class name="sampleMtTests.WrongLoginTest" />
+			<class name="sampleMtTests.SecondTenantTest" /> <!-- Wrong test here -->
+			<class name="sampleMtTests.DoNothingWithLoginTest" />
+			<class name="sampleMtTests.CommonPartTest" />
+		</classes>
+	</test>
+</suite>
